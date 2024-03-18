@@ -1,10 +1,10 @@
 import requests
-from simple_chalk import chalk, green, red, blue
+import colours
 
 spacex = requests.get("https://api.spacexdata.com/v3/ships")
 
-LIGHT_PURPLE = "\033[1;35m"
-PURPLE = "\033[0;35m"
+def pri(colour, text):
+    print(colours.getColour(colour) + text)
 
 for ship in spacex.json() :
 
@@ -12,4 +12,11 @@ for ship in spacex.json() :
     type=ship["ship_type"]
     roles=ship["roles"]
 
-    print(LIGHT_PURPLE + name, red(type), blue(roles))
+    pri("LIGHT_BLUE", name)
+    pri("BLUE", type)
+    for role in roles :
+        pri("GREEN", role)   
+    
+    print("\n")
+
+

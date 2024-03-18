@@ -1,4 +1,4 @@
-def colour(c) :
+def getColour(c) :
     ansii={
     "BLACK":"\033[0;30m",
     "RED":"\033[0;31m",
@@ -26,8 +26,3 @@ def colour(c) :
     "END":"\033[0m",
     }
     return ansii[c.upper()]
-
-print(colour("red") + "Hello, World!")
-print(colour("blue") + "Hello, World!")
-print(colour("green") + "Hello, World!")
-print(colour("crossed") + "Hello, World!" + colour("end"))   
